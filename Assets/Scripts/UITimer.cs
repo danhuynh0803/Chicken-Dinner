@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class UITimer : MonoBehaviour
 {
-    Text timerText;
+    Text whiteText, blackText;
     public static float timer;
+    private int score;
 
     // Start is called before the first frame update
     void Start()
     {
-        timerText = GetComponent<Text>();
+        whiteText = GetComponent<Text>();
     }
 
     public static void SetDisplayTimer(float newTime)
@@ -25,13 +26,17 @@ public class UITimer : MonoBehaviour
         if (timer >= 0)
         {
             timer -= Time.deltaTime;
-            timerText.text = Mathf.Ceil(timer).ToString();
+            whiteText.text = Mathf.Ceil(timer).ToString();
         }
 
         if (timer <= 0)
         {
+            GameController gameController = FindObjectOfType<GameController>();
             // When timer is 0, dont display it anymore
-            timerText.text = "";
+            score = gameController.score;
+            PlayerPrefs.SetInt("Score", score);
+            whiteText.text = "";
+            gameController.LoadWinScreen();
         }
     }
 }

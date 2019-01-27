@@ -5,7 +5,16 @@ using UnityEngine;
 
 public enum SFX
 {
-
+    StandardHello,
+    MaleHello,
+    FemaleYay,
+    EmoHungry,
+    GirlHungry,
+    GoodChoice,
+    NerdyHungry,
+    Yipee,
+    BadChoice,
+    ThreeStrikes
 }
 
 

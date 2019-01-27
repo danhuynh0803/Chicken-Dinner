@@ -89,7 +89,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 //StartEnemySpawn();
                 levelStarted = false;
-                DialogController.instance.StartDialog();                
+                //.instance.StartDialog();                
                 timer = waveTimer;
             }
         }

@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class Item : MonoBehaviour
 {
-    public string name;
+    public string itemName;
     public Sprite sprite;
     public int score;
     public int cost;
@@ -18,18 +18,18 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        name = this.gameObject.name.ToLower();
         player = FindObjectOfType<PlayerController>().gameObject;
-        if (radius == 0)
+        if (radius <= 0)
         {
-            radius = 1;
+            radius = 3;
         }
     }
 
     private void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
-        if (Vector3.Distance(transform.position, player.transform.position) <= radius)
+        //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
+        //Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+        if (Vector2.Distance(transform.position, player.transform.position) <= radius)
         {
             playerInRange = true;
             canvasTimer = canvasStayTimer;
@@ -43,20 +43,23 @@ public class Item : MonoBehaviour
         {
             if(interactionImage != null)
                 interactionImage.SetActive(true);
+
             if (Input.GetKeyDown(KeyCode.E))
             {
-                player.GetComponent<PlayerController>().PickUpItem(this);
+                player.GetComponent<PlayerController>().PickUpItem(this.gameObject);
             }
         }
         else
         {
             canvasTimer -= Time.deltaTime;
         }
-
+        
+        /*
         if (canvasTimer <= 0)
         {
             if(interactionImage != null && interactionImage.activeSelf == true)
                 interactionImage.SetActive(false);
         }
+        */
     }
 }

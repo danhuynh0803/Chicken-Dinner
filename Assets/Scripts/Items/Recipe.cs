@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Recipe : Item
 {
-    public Item[] components; 
+    // The two components the recipes is made from
+    public Item item1, item2; 
     
 }

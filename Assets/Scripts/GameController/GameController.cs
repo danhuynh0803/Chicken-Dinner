@@ -10,8 +10,9 @@ public class GameController : MonoBehaviour
     public GameObject pauseMenu;
     public int score;
     public Text scoreText;
+    public Text scoreText2;
     public bool isMainMenu;
-    public List<Item> items = new List<Item>();
+    public List<GameObject> items = new List<GameObject>();
 
     public float levelTime;
 
@@ -26,24 +27,36 @@ public class GameController : MonoBehaviour
         //DontDestroyOnLoad(gameObject);
     }
 
+    public int GetIndexOfItem(Item item)
+    {
+        for (int i = 0; i < items.Count; ++i)
+        {
+            if (item.itemName.ToLower().Equals(items[i].GetComponent<Item>().itemName.ToLower()))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
 
     // Give each child a random ingredient from the list
     private void RandomizeChildrenItems()
     {
-        Debug.Log("Randomize children items");
         // Get all child objects and randomize their items
         Child[] children = FindObjectsOfType<Child>();
 
+        /* 
         foreach (Child child in children)
         {
             child.desiredItem = items[Random.Range(0, items.Count-1)];
         }
+        */
     }
 
     private void Start()
     {
         UITimer.SetDisplayTimer(levelTime);
-        RandomizeChildrenItems();
+        //RandomizeChildrenItems();
     }
 
     private void Update()
@@ -58,7 +71,9 @@ public class GameController : MonoBehaviour
         {
             GameOver();   
         }
-        
+
+        scoreText.text = "Score: " + this.score;
+        scoreText2.text = "Score: " + this.score;
     }
 
     public void GameOver()
@@ -69,7 +84,7 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level2");
     }
 
     public void LoadMainMenu()
@@ -77,17 +92,23 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void LoadWinScreen()
+    {
+        SceneManager.LoadScene("WinScene");
+    }
+
     private void TogglePausePanel()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyUp(KeyCode.Escape))
         {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
         }
     }
 
-    public void IncreamentScore(int score)
+    public void IncreamentScore()
     {
-        this.score += score;
-        scoreText.text = "Score: " + score;
+        //this.score += score;
+        this.score++;
+
     }
 }

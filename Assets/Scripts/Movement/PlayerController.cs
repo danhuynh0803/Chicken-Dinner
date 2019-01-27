@@ -8,27 +8,50 @@ public class PlayerController : MonoBehaviour
     private float inputX;
     private float inputY;
     private bool isCarryingItem;
+    public bool isInDialog;
+    public GameObject dialogPanel;
     private Rigidbody2D rigidbody;
     public float speedX;
     public float speedY;
-    public Item carriedItem;
+    public GameObject carriedItem;
     public GameObject carriedItemCanvas;
     public Transform minBound, maxBound;
-
+    Animator anim;
+    
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        inputX = Input.GetAxisRaw("Horizontal");
-        inputY = Input.GetAxisRaw("Vertical");
-
-        rigidbody.velocity = new Vector3(speedX * inputX, speedY * inputY, 0f);
-
+        if (!isInDialog)
+        {
+            inputX = Input.GetAxisRaw("Horizontal");
+            inputY = Input.GetAxisRaw("Vertical");
+            rigidbody.velocity = new Vector3(speedX * inputX, speedY * inputY, 0f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
+        }
+        else
+        {
+            if(Input.GetKeyUp(KeyCode.Space))
+            {
+                SetDialog(false, null);
+            }
+        }
+        
         // Bound player movement
         //BoundMovement();
+
+        if (carriedItem == null)
+        {
+            carriedItemCanvas.SetActive(false);
+        }
+        else
+        {
+            carriedItemCanvas.SetActive(true);
+        }
 
     }
 
@@ -53,17 +76,49 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void PickUpItem(Item item)
+    public void PickUpItem(GameObject item)
     {
-        if(!isCarryingItem)
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Chicken"))
         {
-            carriedItem = item;
-            carriedItemCanvas.GetComponentInChildren<Image>().sprite = item.sprite;
+        anim.Play("Peck");
         }
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("ChickenLeft"))
+        {
+        anim.Play("Peck2");
+        }
+        carriedItem = item;
+        carriedItemCanvas.SetActive(true);
+        carriedItemCanvas.GetComponentInChildren<Image>().sprite = item.GetComponent<Item>().sprite;
     }
 
     public void RemoveCarriedItem()
     {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Chicken"))
+        {
+            anim.Play("Peck");
+        }
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("ChickenLeft"))
+        {
+            anim.Play("Peck2");
+        }
+
         carriedItem = null;
+        carriedItemCanvas.SetActive(false);
+        carriedItemCanvas.GetComponentInChildren<Image>().sprite = null;
+    }
+
+    public void SetDialog(bool toggle, GameObject panel)
+    {
+        isInDialog = toggle;
+        if(toggle)
+        {
+            rigidbody.velocity = new Vector3(0f, 0f, 0f);
+            dialogPanel = panel;
+        }
+        else
+        {
+            dialogPanel.SetActive(false);
+            dialogPanel = null;
+        }
     }
 }

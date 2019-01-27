@@ -1,0 +1,719 @@
+fileFormatVersion: 2
+guid: a928fd134392946da86949fead2cd143
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Keyboard keys (transparent)_0
+    21300002: Keyboard keys (transparent)_1
+    21300004: Keyboard keys (transparent)_2
+    21300006: Keyboard keys (transparent)_3
+    21300008: Keyboard keys (transparent)_4
+    21300010: Keyboard keys (transparent)_5
+    21300012: Keyboard keys (transparent)_6
+    21300014: Keyboard keys (transparent)_7
+    21300016: Keyboard keys (transparent)_8
+    21300018: Keyboard keys (transparent)_9
+    21300020: Keyboard keys (transparent)_10
+    21300022: Keyboard keys (transparent)_11
+    21300024: Keyboard keys (transparent)_12
+    21300026: Keyboard keys (transparent)_13
+    21300028: Keyboard keys (transparent)_14
+    21300030: Keyboard keys (transparent)_15
+    21300032: Keyboard keys (transparent)_16
+    21300034: Keyboard keys (transparent)_17
+    21300036: Keyboard keys (transparent)_18
+    21300038: Keyboard keys (transparent)_19
+    21300040: Keyboard keys (transparent)_20
+    21300042: Keyboard keys (transparent)_21
+    21300044: Keyboard keys (transparent)_22
+    21300046: Keyboard keys (transparent)_23
+    21300048: Keyboard keys (transparent)_24
+    21300050: Keyboard keys (transparent)_25
+    21300052: Keyboard keys (transparent)_26
+    21300054: Keyboard keys (transparent)_27
+    21300056: Keyboard keys (transparent)_28
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 101.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05527fd20886f41419167c086db71572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 103
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956b23e47e99248a8b4251c64df0ba16
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 101.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532b618779b854505be53f0357821577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 101.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49b8015cb2014c008b2332cff00df7b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 101.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b87d5226208f48c49448360ad4b61c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 101.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203ce93e7371d47d4b27d396594788c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_6
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 101.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454fa33b4ff2745c0904b88b77ea0808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_7
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 101.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9b5bdd96ba94518972f370eb2e860d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe2092bcd8284531b97ad4c2be637f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 70
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c184a736b27a4152aa793dc916b19e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 70
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a6e490e0b5f479cb69b49faed056b1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_11
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 68.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f559e0c33d104bef876df15dd8d199b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_12
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 68.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60851e9fc3b146eeb8a54b8e023b561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_13
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 68.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f156cc6d840046cd9e12acb7abf5c26
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_14
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 68.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3f7b4d28b9d4fcab0b13b82dc95f64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_15
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 68.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94d7685d81064fc1b3f35203d10c182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7015fba5dc8c4c1986cef224358407b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_17
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 35.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927b4dab840ef42389c59a4bb7d9a9f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_18
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 35.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79124f5323ab424e954557514fcc246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_19
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 35.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41ea874e423c4cd5a7e0ecbd970c971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_20
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 35.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00fee6719a484375ae65fd8e599aaf0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c798a0a21945a4d949833bc9efc03528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_22
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 2.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f77039c1e23446e1a639c097b946b2c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_23
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 2.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7214aa7ccde4f468f035523feadb4d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_24
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 2.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b08afb90d7242dcbb843c33f8563c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_25
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 2.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3873e27bdea4fcd848a6b8e5e56b2a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_26
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 2.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f5580b041724ffc82e140bea1fc4c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_27
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 2.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002ba114fefff4f8ea5694a276b28f70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard keys (transparent)_28
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 2.25
+        width: 31.5
+        height: 33.75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b1a11177341245f0bf50e2393ea5aed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: aae8811f46a754b548bcc579d2025200
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

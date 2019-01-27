@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &102973640440774619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 102973640440774618}
+  - component: {fileID: 102973640440774437}
+  m_Layer: 0
+  m_Name: Vegetable Fried Rice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &102973640440774618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102973640440774619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.6119452, y: 5.022297, z: -0.0807082}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &102973640440774437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102973640440774619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4630625c6e834cd4e8311b6be495f6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Vegetable Fried Rice
+  sprite: {fileID: 0}
+  score: 0
+  cost: 0
+  radius: 0
+  canvasStayTimer: 1.5
+  interactionImage: {fileID: 0}
+  item1: {fileID: 9194659908699372656, guid: 426bf78a81383294eb25c1757ca79469, type: 3}
+  item2: {fileID: 7490697513932081534, guid: da7c1429220902142ac88ea9506b4b5c, type: 3}

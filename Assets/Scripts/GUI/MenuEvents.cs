@@ -88,7 +88,8 @@ public class MenuEvents : MonoBehaviour
 
     public void OpenWinPanel()
     {
-        WinMenu.SetActive(true);
+        if (WinMenu)
+            WinMenu.SetActive(true);
     }
 
     public void RestartScene()

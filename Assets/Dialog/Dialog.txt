@@ -1,0 +1,49 @@
+item bean burger
+emo
+girl
+nerd
+
+item burrito 
+emo
+girl
+nerd
+
+item casserole
+emo
+girl
+nerd
+
+item cheesy race
+emo
+girl
+nerd
+
+item chickpea
+emo
+girl
+nerd
+
+item chili
+emo
+girl
+nerd
+
+item sqwormy cheese 
+emo
+girl
+nerd
+
+item vegetable fried rice
+emo
+girl
+nerd
+
+item worm fried rice
+emo
+girl
+nerd
+
+item worm salad
+emo
+girl
+nerd

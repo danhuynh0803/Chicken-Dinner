@@ -1,30 +1,124 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Child : MonoBehaviour
 {
-    public GameController gameController;
+    //public GameController gameController;
     public string name;
-    public Item desiredItem;
+    public float itemDecayTimer;
+    private float decayTimer;
+
+    private float newItemTimer = 5.0f;
+    private float privNewItemTimer;
+    [SerializeField]
+    private Item desiredItem;
     public float radius;
     public GameObject itemCanvas;
     public float canvasStayTimer = 1.5f;
+
+    [Header("Dialog Panel params")]
     public GameObject dialogPanel;
+    public TextMeshProUGUI dialogText;
+
     public int score;
     private bool playerInRange;
     private float canvasTimer;
-    private GameObject player;
+    public GameObject player;
+    private int strikes;
+    private bool isHatingYou;
+    public bool isEmo;
+    public bool isNerdy;
+    public bool isGirl;
+    public bool isBaby;
+
+    public Image timerImage;
+
+   
     
+    public int GetStrikeCount()
+    {
+        return strikes;
+    }
 
     private void Start()
     {
+        decayTimer = itemDecayTimer;
+        privNewItemTimer = Random.Range(0, 15);
+        ///WantNewItem();
         player = FindObjectOfType<PlayerController>().gameObject;
+        //itemCanvas.GetComponentInChildren<Image>().sprite = desiredItem.sprite;
+        
+    }
+
+    void WantNewItem()
+    {
+        // Child is struck out and no longer wants food
+        if (strikes >= 3)
+        {
+            return;
+        }
+
+        if(isEmo)
+        {
+         SoundController.Play((int)SFX.EmoHungry);
+        }
+        if(isNerdy)
+        {
+         SoundController.Play((int)SFX.NerdyHungry);
+        }
+        if(isGirl)
+        {
+         SoundController.Play((int)SFX.GirlHungry);
+        }
+        if(isBaby)
+        {
+         SoundController.Play((int)SFX.GirlHungry);
+        }  
+
+        GameObject newItem =
+            GameController.instance.items[Random.Range(0, GameController.instance.items.Count - 1)];
+
+        desiredItem = newItem.GetComponent<Item>();
+
+        //Debug.Log("Get new item " + desiredItem);
+        //itemCanvas.GetComponentInChildren<Image>().sprite = desiredItem.sprite;
+
+        decayTimer = itemDecayTimer;
+        privNewItemTimer = newItemTimer;
     }
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= radius)
+        // Remove canvas when child is not desiring an item
+        if (desiredItem != null)
+        {
+            itemCanvas.SetActive(true);
+            
+            //Debug.Log("have item " + desiredItem.itemName);
+            decayTimer -= Time.deltaTime;
+            if (decayTimer <= 0)
+            {
+                desiredItem = null;
+                privNewItemTimer = newItemTimer;
+                strikes++;
+            }
+        }
+        else
+        {
+            itemCanvas.SetActive(false);
+            privNewItemTimer -= Time.deltaTime;
+        }
+        
+        if (privNewItemTimer <= 0)
+        {
+            WantNewItem();
+        }    
+
+        //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
+        if (Vector2.Distance(transform.position, player.transform.position) <= radius)
         {
             playerInRange = true;
             canvasTimer = canvasStayTimer;
@@ -34,47 +128,137 @@ public class Child : MonoBehaviour
             playerInRange = false;
         }
 
-        if (playerInRange)
+        if (playerInRange && !isHatingYou)
         {
-            itemCanvas.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E) && dialogPanel.activeSelf == false)
+            //itemCanvas.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Space) && dialogPanel.activeSelf == false)
             {
                 dialogPanel.SetActive(true);
                 UpdateDialogCanvas();
             }
-            if (Input.GetKeyDown(KeyCode.Space) && dialogPanel.activeSelf == false)
+
+            if (Input.GetKeyDown(KeyCode.E) && dialogPanel.activeSelf == false)
             {
                 if (player.GetComponent<PlayerController>().carriedItem != null)
-                    RecieveItem(player.GetComponent<PlayerController>().carriedItem);
+                {
+                    RecieveItem(player.GetComponent<PlayerController>().carriedItem.GetComponent<Item>());
+                }
             }
+
         }
         else
         {
             canvasTimer -= Time.deltaTime;
         }
 
-        if (canvasTimer <= 0)
+    }
+
+    private void LateUpdate()
+    {
+        if (desiredItem)
         {
-            itemCanvas.SetActive(false);
+            timerImage.fillAmount = decayTimer / itemDecayTimer;
+
+            if (timerImage.fillAmount < 0.3f)
+            {
+                timerImage.color = Color.red;
+            }
+            else if (timerImage.fillAmount < 0.65f)
+            {
+                timerImage.color = Color.yellow;
+            }
+            else
+            {
+                timerImage.color = Color.green;
+            }
         }
     }
 
     private void UpdateDialogCanvas()
     {
+        player.GetComponent<PlayerController>().SetDialog(true, dialogPanel);
         
+        if (isEmo)
+        {
+            dialogText.text =
+                DialogController.instance.GetItemDialogForChickType(Chicks.Emo,
+                GameController.instance.GetIndexOfItem(desiredItem));
+
+            SoundController.Play((int)SFX.MaleHello);
+        }   
+        else if (isNerdy)
+        {
+            dialogText.text =
+                DialogController.instance.GetItemDialogForChickType(Chicks.Nerd,
+                GameController.instance.GetIndexOfItem(desiredItem));
+
+            //SoundController.Play((int)SFX.MaleHello);
+        }
+        else if (isGirl)
+        {
+            dialogText.text =
+                  DialogController.instance.GetItemDialogForChickType(Chicks.Girl,
+                  GameController.instance.GetIndexOfItem(desiredItem));
+
+            //SoundController.Play((int)SFX.MaleHello);
+        }
+        else
+        {
+            // Chick
+        }
     }
 
     private void RecieveItem(Item item)
     {
-        if (desiredItem.name.Equals(item.name))
+        if(desiredItem != null)
         {
-            player.GetComponent<PlayerController>().RemoveCarriedItem();
-            IncreamentScore();
+            if (desiredItem.itemName.ToLower().Equals(item.itemName.ToLower()))
+            {
+                player.GetComponent<PlayerController>().RemoveCarriedItem();
+                IncreamentScore();
+                desiredItem = null;
+                itemCanvas.SetActive(false);
+                privNewItemTimer = newItemTimer;
+            }
+            else
+            {
+                //strikes++;
+                player.GetComponent<PlayerController>().RemoveCarriedItem();
+                privNewItemTimer = newItemTimer;
+                if (strikes <= 2)
+                {
+                SoundController.Play((int)SFX.BadChoice);    
+                }
+                if (strikes >= 3)
+                {
+                    SoundController.Play((int)SFX.ThreeStrikes);
+                    isHatingYou = true;
+                }
+            }
         }
+        //Debug.Log("desiredItem " + desiredItem.itemName);
+        //Debug.Log("carriedItem " + item.itemName);
+       
     }
 
     private void IncreamentScore()
     {
-        gameController.GetComponent<GameController>().IncreamentScore(score);
+       float rate = UnityEngine.Random.Range(0.0f, 100.0f);
+       if (rate > 19.0f)
+       {
+        SoundController.Play((int)SFX.GoodChoice);
+        }
+        else
+        {
+        if (isGirl)
+        {
+        SoundController.Play((int)SFX.FemaleYay);
+        }
+        else
+        {
+        SoundController.Play((int)SFX.GoodChoice);
+        }
+        }
+        GameController.instance.IncreamentScore();
     }
 }
