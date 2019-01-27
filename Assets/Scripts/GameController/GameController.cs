@@ -71,9 +71,10 @@ public class GameController : MonoBehaviour
         {
             GameOver();   
         }
-
-        scoreText.text = "Score: " + this.score;
-        scoreText2.text = "Score: " + this.score;
+        if(scoreText != null)
+            scoreText.text = "Score:";
+        if(scoreText2 != null)
+            scoreText2.text = "" + this.score;
     }
 
     public void GameOver()
@@ -94,7 +95,7 @@ public class GameController : MonoBehaviour
 
     public void LoadWinScreen()
     {
-        SceneManager.LoadScene("WinScene");
+        Camera.main.GetComponent<MenuEvents>().LoadNextScene();
     }
 
     private void TogglePausePanel()
@@ -110,5 +111,10 @@ public class GameController : MonoBehaviour
         //this.score += score;
         this.score++;
 
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

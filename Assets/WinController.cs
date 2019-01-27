@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinController : MonoBehaviour
 {
@@ -12,11 +13,15 @@ public class WinController : MonoBehaviour
     public float timerTwo;
     private float sameOne;
     private float sameTwo;
+    public Text scoreText;
+    public GameObject veggieTwo;
+    public GameObject wormTwo;
 
     // Start is called before the first frame update
     void Start()
     {
         score =  PlayerPrefs.GetInt("Score");
+        scoreText.text = "" + score;
         sameOne = timerOne;
         sameTwo = timerTwo;
         if (score > 3)
@@ -24,13 +29,21 @@ public class WinController : MonoBehaviour
             yipee.SetActive(true);
             hooray.SetActive(true);
         }
-        if (score > 9)
+        if (score > 7)
         {
             sameOne--;
         }
-        if (score > 10)
+        if (score > 8)
         {
             sameTwo--;
+        }
+        if (score > 9)
+        {
+            veggieTwo.SetActive(true);
+        }
+        if (score > 10)
+        {
+            wormTwo.SetActive(true);
         }
     }
 

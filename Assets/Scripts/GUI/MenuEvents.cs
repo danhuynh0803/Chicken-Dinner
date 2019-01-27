@@ -85,6 +85,11 @@ public class MenuEvents : MonoBehaviour
         if (GameOverMenu)
             GameOverMenu.SetActive(false);
     }
+    
+    public void Quit()
+    {
+        Application.Quit();
+    }
 
     public void OpenWinPanel()
     {
@@ -110,6 +115,7 @@ public class MenuEvents : MonoBehaviour
         // Move to next level based on current scene index
         LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 
     public void LoadScene(int sceneIndex)
     {

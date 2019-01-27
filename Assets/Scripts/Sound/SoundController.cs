@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum SFX
 {
-    StandardHello,
+    FemaleHello,
     MaleHello,
     FemaleYay,
     EmoHungry,
@@ -14,7 +14,11 @@ public enum SFX
     NerdyHungry,
     Yipee,
     BadChoice,
-    ThreeStrikes
+    ThreeStrikes,
+    BabyCheep,
+    RealOne,
+    RealTwo,
+    WinNoise
 }
 
 

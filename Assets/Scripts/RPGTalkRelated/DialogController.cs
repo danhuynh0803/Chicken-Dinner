@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public enum Chicks
 {
     Emo,
-    Nerd,
-    Girl
+    Girl,
+    Nerd
 };
 
 // Use this to call to our dialog controller
@@ -20,7 +20,7 @@ public class DialogController : MonoBehaviour
     public TextAsset dialogScript;
     private char[] delimiterChars = { ' ', ',', '\t' };
 
-    public List<List<string>> itemDialogs = new List<List<string>>();
+    private List<List<string>> itemDialogs = new List<List<string>>();
     [Header("Debugging info")]
     //public List<int> waveStartLines = new List<int>();
     
@@ -33,7 +33,12 @@ public class DialogController : MonoBehaviour
         {
             instance = this;
         }
-                
+      
+        for (int i = 0; i < 10;  ++i)
+        {
+            itemDialogs.Add(new List<string>());
+        }
+
         ParseTextfileForLineNums();
     }
 
@@ -54,18 +59,25 @@ public class DialogController : MonoBehaviour
         for (int lineNum = 0; lineNum < lines.Length; ++lineNum)
         {         
             string[] words = lines[lineNum].Split(delimiterChars);
-            string firstWord = words[0];
+            if (words.Length <= 0)
+            {
+                continue;
+            }
 
+            Debug.Log(lines[lineNum]);
+            string firstWord = words[0];
             if (firstWord.ToLower().Contains("item"))
             {
                 currItem++;
             }
-            // Check if the first word is one of our keywords: 
-            
+
+            // Check if the first word is one of our keywords:       
             if (firstWord.ToLower().Contains("emo") || 
                 firstWord.ToLower().Contains("nerd") ||
                 firstWord.ToLower().Contains("girl"))                   
             {
+                //Debug.Log("Contains keyword");
+                //Debug.Log(lineNum);
                 itemDialogs[currItem].Add(lines[++lineNum]);
             }
 

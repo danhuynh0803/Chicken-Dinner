@@ -10,7 +10,7 @@ public class Child : MonoBehaviour
     public string name;
     public float itemDecayTimer;
     private float decayTimer;
-
+    public float startItemTimer; 
     private float newItemTimer = 5.0f;
     private float privNewItemTimer;
     [SerializeField]
@@ -18,11 +18,7 @@ public class Child : MonoBehaviour
     public float radius;
     public GameObject itemCanvas;
     public float canvasStayTimer = 1.5f;
-
-    [Header("Dialog Panel params")]
     public GameObject dialogPanel;
-    public TextMeshProUGUI dialogText;
-
     public int score;
     private bool playerInRange;
     private float canvasTimer;
@@ -33,11 +29,12 @@ public class Child : MonoBehaviour
     public bool isNerdy;
     public bool isGirl;
     public bool isBaby;
-
+    public GameObject loveParticle;
     public Image timerImage;
-
-   
-    
+    public TextMeshProUGUI dialogText;
+    public GameObject babyImage1, babyImage2;
+    public UITimer timer;
+    public float factor;
     public int GetStrikeCount()
     {
         return strikes;
@@ -45,8 +42,10 @@ public class Child : MonoBehaviour
 
     private void Start()
     {
+        factor = 1f;
         decayTimer = itemDecayTimer;
-        privNewItemTimer = Random.Range(0, 15);
+
+        privNewItemTimer = startItemTimer;
         ///WantNewItem();
         player = FindObjectOfType<PlayerController>().gameObject;
         //itemCanvas.GetComponentInChildren<Image>().sprite = desiredItem.sprite;
@@ -75,7 +74,7 @@ public class Child : MonoBehaviour
         }
         if(isBaby)
         {
-         SoundController.Play((int)SFX.GirlHungry);
+         SoundController.Play((int)SFX.BabyCheep);
         }  
 
         GameObject newItem =
@@ -87,7 +86,7 @@ public class Child : MonoBehaviour
         //itemCanvas.GetComponentInChildren<Image>().sprite = desiredItem.sprite;
 
         decayTimer = itemDecayTimer;
-        privNewItemTimer = newItemTimer;
+        privNewItemTimer = Random.Range(newItemTimer, 10.0f);
     }
 
     void Update()
@@ -98,7 +97,7 @@ public class Child : MonoBehaviour
             itemCanvas.SetActive(true);
             
             //Debug.Log("have item " + desiredItem.itemName);
-            decayTimer -= Time.deltaTime;
+            decayTimer -= Time.deltaTime * factor;
             if (decayTimer <= 0)
             {
                 desiredItem = null;
@@ -176,36 +175,104 @@ public class Child : MonoBehaviour
 
     private void UpdateDialogCanvas()
     {
+        timer.factor = 0f;
+        Time.timeScale = 0f;
         player.GetComponent<PlayerController>().SetDialog(true, dialogPanel);
-        
         if (isEmo)
         {
-            dialogText.text =
-                DialogController.instance.GetItemDialogForChickType(Chicks.Emo,
-                GameController.instance.GetIndexOfItem(desiredItem));
+            if (desiredItem)
+            {
+                dialogText.text =
+                   DialogController.instance.GetItemDialogForChickType(Chicks.Emo,
+                   GameController.instance.GetIndexOfItem(desiredItem));
 
-            SoundController.Play((int)SFX.MaleHello);
-        }   
+                SoundController.Play((int)SFX.MaleHello);
+            }
+            else if (strikes >= 3)
+            {
+                dialogText.text = ".............";
+            }
+            else
+            {
+                dialogText.text = "Leave me alone, I just ate!";
+            }
+        }
         else if (isNerdy)
         {
-            dialogText.text =
-                DialogController.instance.GetItemDialogForChickType(Chicks.Nerd,
-                GameController.instance.GetIndexOfItem(desiredItem));
+            if (desiredItem)
+            {
+                dialogText.text =
+                    DialogController.instance.GetItemDialogForChickType(Chicks.Nerd,
+                    GameController.instance.GetIndexOfItem(desiredItem));
 
-            //SoundController.Play((int)SFX.MaleHello);
+                SoundController.Play((int)SFX.MaleHello);
+            }
+            else if (strikes >= 3)
+            {
+                dialogText.text = "I’m busy, could you leave me alone?";
+            }
+            else
+            {
+                dialogText.text = "I have received enough nutrition for now.";
+            }
+
         }
         else if (isGirl)
         {
-            dialogText.text =
-                  DialogController.instance.GetItemDialogForChickType(Chicks.Girl,
-                  GameController.instance.GetIndexOfItem(desiredItem));
+            if (desiredItem)
+            {
+                dialogText.text =
+                    DialogController.instance.GetItemDialogForChickType(Chicks.Girl,
+                    GameController.instance.GetIndexOfItem(desiredItem));
 
-            //SoundController.Play((int)SFX.MaleHello);
+                SoundController.Play((int)SFX.FemaleHello);
+            }
+            else if (strikes >= 3)
+            {
+                dialogText.text = "Did you need something? You keep bothering me...";
+            }
+            else
+            {
+                dialogText.text = "Hey I can't eat too much, gotta watch my calories!";
+            }       
+
         }
-        else
+        else if (isBaby)
         {
-            // Chick
-        }
+            SoundController.Play((int)SFX.BabyCheep);
+            if (desiredItem)
+            {
+                babyImage1.SetActive(true);
+                babyImage2.SetActive(true);
+                if (desiredItem.GetComponent<Recipe>().item1.itemName.ToLower().Equals("veggies"))
+                {
+                    babyImage1.GetComponent<RectTransform>().localScale = new Vector3(0.4f, 0.4f, babyImage1.GetComponent<RectTransform>().localScale.z);
+                }
+                if (desiredItem.GetComponent<Recipe>().item1.itemName.ToLower().Equals("rice"))
+                {
+                    babyImage1.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, babyImage1.GetComponent<RectTransform>().localScale.z);
+                }
+                if (desiredItem.GetComponent<Recipe>().item2.itemName.ToLower().Equals("veggies"))
+                {
+                    babyImage2.GetComponent<RectTransform>().localScale = new Vector3(0.4f, 0.4f , babyImage1.GetComponent<RectTransform>().localScale.z);
+                }
+                if (desiredItem.GetComponent<Recipe>().item2.itemName.ToLower().Equals("rice"))
+                {
+                    babyImage2.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, babyImage1.GetComponent<RectTransform>().localScale.z);
+                }
+                babyImage1.GetComponent<Image>().sprite = desiredItem.GetComponent<Recipe>().item1.sprite;
+                babyImage2.GetComponent<Image>().sprite = desiredItem.GetComponent<Recipe>().item2.sprite;     
+            }
+            else if (strikes >= 3)
+            {
+                dialogText.text = "*Angry chirp noises*";
+            }
+            else
+            {
+                babyImage1.SetActive(false);
+                babyImage2.SetActive(false);
+            }
+        }     
     }
 
     private void RecieveItem(Item item)
@@ -219,6 +286,9 @@ public class Child : MonoBehaviour
                 desiredItem = null;
                 itemCanvas.SetActive(false);
                 privNewItemTimer = newItemTimer;
+                GameObject particle =Instantiate(loveParticle, transform);
+                particle.SetActive(true);
+                Destroy(particle, 3f);
             }
             else
             {
@@ -253,6 +323,10 @@ public class Child : MonoBehaviour
         if (isGirl)
         {
         SoundController.Play((int)SFX.FemaleYay);
+        }
+        if (isBaby)
+        {
+        SoundController.Play((int)SFX.BabyCheep);
         }
         else
         {

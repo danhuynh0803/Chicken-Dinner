@@ -1,0 +1,79 @@
+﻿item Bean burger
+Emo
+Worm burgers are bad for the environment! We should make our own instead, with beans and veggies.
+Girl
+I want a bean-ormous veggie burger!
+Nerd
+I’ve bean on the same level of my video game for hours now, but I haven’t been able to beet it… I don’t know what I’m doing wrong.
+
+item Burrito
+Emo
+Sometimes being around other people isn’t beanough to cure my provoloneliness. 
+Girl
+Brrrrr(ito) it's cold in here! Can we have some nice, warm beans and cheese?
+Nerd
+I think I’m gonna start studying
+
+item Casserole
+Emo
+Some days, you just have to casserole with the punches, even when you want to just veg inside all day. What?! I’m not cheesy.
+Girl
+It would be gouda to have some veggies tonight!
+Nerd
+It would be grate if we could have some veggies for dinner.
+ 
+item Cheesy rice
+Emo
+The only thing that is good in this world is cheese. And carbs.	
+Girl
+I had a really good day at school today! All my classes were rice and cheesy!	
+Nerd
+I would rice some cheese like please! I mean...
+
+item Chickpea
+Emo 
+To bean or not to bean, that is the question. Or I guess you could rice and bean... huh, I kind of like that.
+Girl
+Sorry, did you ask me something? I guess I'm having a bit of a grain fart.
+Nerd
+I would rice some like and beans please! I mean...
+
+item Chili
+Emo
+Only beans and worms will warm my chili heart.
+Girl
+I’m really chili! Could we maybe have some beans and worms to warm us up?
+Nerd
+I've bean thinking, could we have some worm chili tonight?
+
+item Sqwormy cheesesteak
+Emo
+Did you know worms like cheese?
+Girl
+CHEESESTEAK CHEESESTEAK! SQUIRMY-WORMY CHEESESTEAK! Um... please.
+Nerd
+I would be very cheesed if we could have worms for dinner tonight!
+
+item Vegetable fried rice
+Emo
+If we could have rice for dinner, it would be rad-ish.
+Girl
+Could we have some vegetable fried rice for dinner? Please?
+Nerd
+I don't really carrot all what we have for dinner, anything would be rice.
+
+item Worm fried rice
+Emo
+I'm in the mood for something dirtlike... grainy and wormy.
+Girl
+There's something about the way worms look over rice. The worms look like noodles so it looks like you have noodles over rice! It's so funny!
+Nerd
+Some worm-fried nice would be rice!
+
+item Worm Salad
+Emo
+Leaf me alone! You're always trying to worm into my business...
+Girl
+Could you lettuce have some worms tonight?
+Nerd
+It would mean the worm to me if we could have salad tonight!

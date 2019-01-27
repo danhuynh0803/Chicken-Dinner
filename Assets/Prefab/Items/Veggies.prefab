@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Veggies
-  sprite: {fileID: 21300024, guid: fad21d3daea1b4166be6375b3c87f05e, type: 3}
+  sprite: {fileID: 21300000, guid: 90514ce486989074f95ec71340da0e60, type: 3}
   score: 0
   cost: 0
   radius: 3
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300024, guid: fad21d3daea1b4166be6375b3c87f05e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90514ce486989074f95ec71340da0e60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

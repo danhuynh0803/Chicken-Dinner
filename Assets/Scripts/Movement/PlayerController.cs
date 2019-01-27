@@ -10,12 +10,14 @@ public class PlayerController : MonoBehaviour
     private bool isCarryingItem;
     public bool isInDialog;
     public GameObject dialogPanel;
+    public Child child;
     private Rigidbody2D rigidbody;
     public float speedX;
     public float speedY;
     public GameObject carriedItem;
     public GameObject carriedItemCanvas;
     public Transform minBound, maxBound;
+    public UITimer timer;
     Animator anim;
     
     private void Start()
@@ -37,7 +39,9 @@ public class PlayerController : MonoBehaviour
         {
             if(Input.GetKeyUp(KeyCode.Space))
             {
+                timer.factor = 1f;
                 SetDialog(false, null);
+                Time.timeScale = 1f;
             }
         }
         

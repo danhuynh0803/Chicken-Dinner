@@ -15,12 +15,15 @@ public class CraftingPot : MonoBehaviour
     public GameObject craftPanel;
     public Image item1Image, item2Image;
     public GameObject craftButton;
-    Animator anim;
+    public GameObject craftFlame;
+    public Transform recipeSpawn;
 
+    Animator anim;
     AudioSource audio; 
 
     private void Start()
     {
+        craftFlame.SetActive(false);
         audio = GetComponent<AudioSource>();
         craftPanel.SetActive(false);
         anim = GetComponent<Animator>();
@@ -43,20 +46,24 @@ public class CraftingPot : MonoBehaviour
             }
             else
             {
-                CraftWithDelay(3.0f);
-                RemoveAddedItems();
+                audio.Play();
+                craftFlame.SetActive(true);
+                StartCoroutine(CraftWithDelay(3.0f));
+                //CraftWithDelay(3.0f);
+                
             }
         }
     }
 
     IEnumerator CraftWithDelay(float seconds)
     {
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitForSeconds(seconds);     
         
-        audio.Play();
         // Check if we have all of the necessary ingredients
-        foreach (Recipe recipe in recipes)
+        foreach (GameObject recipeObject in GameController.instance.items)
+        //foreach (Recipe recipe in recipes)
         {
+            Recipe recipe = recipeObject.GetComponent<Recipe>();
             // Check if the recipe components match what is in the pot
             if (addedItem1.itemName.ToLower().Equals(recipe.item1.itemName.ToLower()) ||
                 addedItem1.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
@@ -65,12 +72,17 @@ public class CraftingPot : MonoBehaviour
                     addedItem2.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
                 {
                     createdItem = recipe.GetComponent<Item>();
+                    Instantiate(recipeObject, recipeSpawn.position, Quaternion.identity);
                     Debug.Log("Crafted " + createdItem.itemName);            
                     break;
                 }
             }
 
         }
+
+        audio.Stop();
+        RemoveAddedItems();
+        craftFlame.SetActive(false);
     }
 
     public void CraftWithNoDelay()
@@ -179,7 +191,7 @@ public class CraftingPot : MonoBehaviour
         {
             craftPanel.SetActive(true);
             PlayerController player = FindObjectOfType<PlayerController>();
-            if (Input.GetKeyDown(KeyCode.E) && player.carriedItem)
+            if (Input.GetKeyDown(KeyCode.E) && player.carriedItem && player.carriedItem.GetComponent<Recipe>() == null)
             {
                 if (addedItem1 == null)
                 {

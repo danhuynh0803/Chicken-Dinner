@@ -1,49 +1,79 @@
 item bean burger
 emo
+bean burger e
 girl
+bean burger g
 nerd
+bean burger n
 
 item burrito 
 emo
+burrito e
 girl
+burrito g
 nerd
+burrito n
 
 item casserole
 emo
+casserole e 
 girl
+casserole g
 nerd
+casserole n
 
 item cheesy race
 emo
+cheesy race e 
 girl
+cheesy race g
 nerd
+cheesy race n
 
 item chickpea
 emo
+chickpea e 
 girl
+chickpea g
 nerd
+chickpea n
 
 item chili
 emo
+chili e 
 girl
+chili g
 nerd
+chili n
 
 item sqwormy cheese 
 emo
+sqwormy cheese e
 girl
+sqwormy cheese g
 nerd
+sqwormy cheese n
 
 item vegetable fried rice
 emo
+vegetable fried rice e 
 girl
+vegetable fried rice g
 nerd
+vegetable fried rice n
 
 item worm fried rice
 emo
+worm fried rice e 
 girl
+worm fried rice g
 nerd
+worm fried rice n
 
 item worm salad
 emo
+worm salad e 
 girl
+worm salad g
 nerd
+worm salad n
