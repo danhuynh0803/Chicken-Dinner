@@ -1,7 +1,7 @@
 # GGJ-2019
 Game made for Global Game Jam 2019. Theme: "What does home mean to you?"
 
-Visit the entree page here: https://globalgamejam.org/2019/games/chicken-dinner
+Visit the submission page here: https://globalgamejam.org/2019/games/chicken-dinner
 
 Link to play the game: https://legav.itch.io/chicken-dinner
 
