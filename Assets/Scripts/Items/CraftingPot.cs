@@ -28,11 +28,11 @@ public class CraftingPot : MonoBehaviour
         craftPanel.SetActive(false);
         anim = GetComponent<Animator>();
         /*
-        foreach (Recipe recipe in recipes)
-        {
-            Debug.Log(recipe.itemName + " made from: " + recipe.item1.itemName + " and " + recipe.item2.itemName);
-        }
-        */
+           foreach (Recipe recipe in recipes)
+           {
+           Debug.Log(recipe.itemName + " made from: " + recipe.item1.itemName + " and " + recipe.item2.itemName);
+           }
+         */
     }
 
     public void Craft()
@@ -50,7 +50,7 @@ public class CraftingPot : MonoBehaviour
                 craftFlame.SetActive(true);
                 StartCoroutine(CraftWithDelay(3.0f));
                 //CraftWithDelay(3.0f);
-                
+
             }
         }
     }
@@ -58,18 +58,18 @@ public class CraftingPot : MonoBehaviour
     IEnumerator CraftWithDelay(float seconds)
     {
         yield return new WaitForSeconds(seconds);     
-        
+
         // Check if we have all of the necessary ingredients
         foreach (GameObject recipeObject in GameController.instance.items)
-        //foreach (Recipe recipe in recipes)
+            //foreach (Recipe recipe in recipes)
         {
             Recipe recipe = recipeObject.GetComponent<Recipe>();
             // Check if the recipe components match what is in the pot
             if (addedItem1.itemName.ToLower().Equals(recipe.item1.itemName.ToLower()) ||
-                addedItem1.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
+                    addedItem1.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
             {
                 if (addedItem2.itemName.ToLower().Equals(recipe.item1.itemName.ToLower()) ||
-                    addedItem2.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
+                        addedItem2.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
                 {
                     createdItem = recipe.GetComponent<Item>();
                     Instantiate(recipeObject, recipeSpawn.position, Quaternion.identity);
@@ -101,10 +101,10 @@ public class CraftingPot : MonoBehaviour
             {
                 // Check if the recipe components match what is in the pot
                 if (addedItem1.itemName.ToLower().Equals(recipe.item1.itemName.ToLower()) ||
-                    addedItem1.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
+                        addedItem1.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
                 {
                     if (addedItem2.itemName.ToLower().Equals(recipe.item1.itemName.ToLower()) ||
-                        addedItem2.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
+                            addedItem2.itemName.ToLower().Equals(recipe.item2.itemName.ToLower()))
                     {
                         createdItem = recipe.GetComponent<Item>();
                         Debug.Log("Crafted " + createdItem.itemName);
@@ -128,11 +128,8 @@ public class CraftingPot : MonoBehaviour
         // Craft when two items are added
         if (addedItem1 && addedItem2)
         {
-            craftButton.SetActive(true);
-        }
-        else
-        {
-            craftButton.SetActive(false);
+            // Autocraft when there are two items placed inside
+            Craft();
         }
 
         if (addedItem1 && addedItem2)
@@ -149,7 +146,7 @@ public class CraftingPot : MonoBehaviour
             item2Image.sprite = addedItem2.sprite;
             anim.Play("OneItem");
         }
-        
+
         if (addedItem1 == null)
         {
             item1Image.sprite = null;
@@ -157,9 +154,8 @@ public class CraftingPot : MonoBehaviour
         if (addedItem2 == null)
         {
             item2Image.sprite = null;
-            //item2Image.sprite = addedItem2.sprite;          
         }
-        
+
         if (!addedItem1 && !addedItem2)
         {
             anim.Play("CraftEmpty");
@@ -169,7 +165,7 @@ public class CraftingPot : MonoBehaviour
 
     void DisplayAddedItems()
     {
-        
+
     }
 
     void CookItems()

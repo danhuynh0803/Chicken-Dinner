@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
     private bool playerInRange;
     private GameObject player;
     private float canvasTimer;
-    
+
 
     private void Start()
     {
@@ -29,6 +29,7 @@ public class Item : MonoBehaviour
     {
         //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
         //Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+        /*
         if (Vector2.Distance(transform.position, player.transform.position) <= radius)
         {
             playerInRange = true;
@@ -53,13 +54,42 @@ public class Item : MonoBehaviour
         {
             canvasTimer -= Time.deltaTime;
         }
-        
-        /*
-        if (canvasTimer <= 0)
-        {
-            if(interactionImage != null && interactionImage.activeSelf == true)
-                interactionImage.SetActive(false);
-        }
         */
+
+        /*
+           if (canvasTimer <= 0)
+           {
+           if(interactionImage != null && interactionImage.activeSelf == true)
+           interactionImage.SetActive(false);
+           }
+         */
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            if(interactionImage != null)
+                interactionImage.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                player.GetComponent<PlayerController>().PickUpItem(this.gameObject);
+            }
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            if(interactionImage != null)
+                interactionImage.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                player.GetComponent<PlayerController>().PickUpItem(this.gameObject);
+            }
+        }
     }
 }

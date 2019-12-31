@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public Transform minBound, maxBound;
     public UITimer timer;
     Animator anim;
-    
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
                 Time.timeScale = 1f;
             }
         }
-        
+
         // Bound player movement
         //BoundMovement();
 
@@ -84,11 +84,11 @@ public class PlayerController : MonoBehaviour
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Chicken"))
         {
-        anim.Play("Peck");
+            anim.Play("Peck");
         }
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("ChickenLeft"))
         {
-        anim.Play("Peck2");
+            anim.Play("Peck2");
         }
         carriedItem = item;
         carriedItemCanvas.SetActive(true);
